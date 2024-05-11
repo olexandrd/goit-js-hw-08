@@ -16,6 +16,7 @@ ol {
   flex-wrap: wrap;
   width: 1128px;
   gap: 24px;
+  margin: 24px auto;
 }
 
 .gallery-image {
