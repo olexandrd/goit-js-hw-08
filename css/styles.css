@@ -10,3 +10,21 @@ ol {
   padding: 0;
   margin: 0;
 }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1128px;
+  gap: 24px;
+}
+
+.gallery-image {
+  width: 360px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.gallery-image:hover {
+  transform: scale(1.03);
+  cursor: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNiIgaGVpZ2h0PSIzOCIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iIzRFNzVGRiIgZD0iTTExLjE1NyAzNi45MWMuMzMuMjc0Ljc0NS40MjQgMS4xNzMuNDIzaDE5LjUwM2EzLjY2NyAzLjY2NyAwIDAgMCAzLjY2Ny0zLjY2NlYyMC40NDhhMy42NjYgMy42NjYgMCAwIDAtMy4yNjEtMy42NDNMMTkgMTUuMzMzdi0xMWEzLjY2NyAzLjY2NyAwIDEgMC03LjMzMyAwdjIybC01LjU1NS0yLjIyMmEzLjY2OSAzLjY2OSAwIDAgMC00Ljg0MiAyLjI0NmwtLjIwNy42MjNhMS44MyAxLjgzIDAgMCAwIC41NjYgMS45ODhsOS41MjggNy45NDJaIi8+PC9zdmc+'), auto;
+}
