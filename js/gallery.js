@@ -48,25 +48,23 @@ const images = [
 
 const gallery = document.querySelector('.gallery');
 
-const galleryPreviewContainer = [];
+const galleryPreviewContainer = images
+	.map(
+		({ preview, original, description }) =>
+			`<li class="gallery-item">
+				<a class="gallery-link" href="${original}">
+					<img
+					class="gallery-image"
+					src="${preview}"
+					data-source="${original}"
+					alt="${description}"
+					/>
+				</a>
+			</li>`,
+	)
+	.join('');
 
-images.forEach(({ preview, original, description }) => {
-	galleryPreviewContainer.push(
-		`<li class="gallery-item">
-			<a class="gallery-link" href="${original}">
-				<img
-				class="gallery-image"
-				src="${preview}"
-				data-source="${original}"
-				alt="${description}"
-				/>
-			</a>
-		</li>
-`,
-	);
-});
-
-gallery.insertAdjacentHTML('afterbegin', galleryPreviewContainer.join(''));
+gallery.insertAdjacentHTML('afterbegin', galleryPreviewContainer);
 
 gallery.addEventListener('click', onGalleryClick);
 
@@ -76,7 +74,11 @@ function onGalleryClick(event) {
 		return;
 	}
 	const instance = basicLightbox.create(`
-    	<img src="${event.target.dataset.source}" width="1112" height="640">
+    	<img
+		src="${event.target.dataset.source}" 
+		alt="${event.target.alt}"
+		width="1112" 
+		height="640">
 	`);
 
 	instance.show();
